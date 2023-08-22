@@ -1,2 +1,5 @@
 # Text-Console
-An example of a none gui based text editor currently in the works
+An example of a non gui based text editor currently in the works
+
+
+Made By PKM74
