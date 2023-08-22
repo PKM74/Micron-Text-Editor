@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include <time.h>
 int main()
 {
@@ -50,15 +49,19 @@ int main()
     }
     if (yn == 'y'){
     printf("File Created\n");
+    yn = '\0';
     }
         if (yn == 'Y'){
     printf("File Created\n");
+    yn = '\0';
     }
         if (yn == 'N'){
     printf("File Create Cancelled\n");
+    yn = '\0';
     }
             if (yn == 'n'){
     printf("File Create Cancelled\n");
+    yn = '\0';
     }
 }
 }
