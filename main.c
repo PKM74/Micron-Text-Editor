@@ -9,6 +9,7 @@ int main()
     char ch; //cmd lines input
     char create; //char store for the create command
         char yn; //char store for y/n inputs
+        char ctype;
     printf("/>");
     scanf(" %s", &ch);
 
@@ -31,30 +32,44 @@ int main()
         printf("Type:");
         scanf("%s", &create);
     }
-{//if statements for Y/N questions
-    if (create == '1'){//file create statement 1
+{//if statements for Y/N questions (file create menu)
+    if (create == '1'){//file create statement 1 (TXT)
         printf("Are You Sure?\n");
         printf("Y or N:");
         scanf("%s", &yn);
+        ctype = '1';
     }
-        if (create == '2'){//file create statement 2
+        if (create == '2'){//file create statement 2 (C)
         printf("Are You Sure?\n");
         printf("Y or N:");
         scanf("%s", &yn);
+                ctype = '2';
     }
-        if (create == '3'){//file create statement 3
+        if (create == '3'){//file create statement 3 (C++)
+
         printf("Are You Sure?\n");
         printf("Y or N:");
         scanf("%s", &yn);
+                ctype = '3';
     }
+
+  {//File Create Stuff
     if (yn == 'y'){
     printf("File Created\n");
     yn = '\0';
+
     }
         if (yn == 'Y'){
     printf("File Created\n");
     yn = '\0';
+
     }
+    if (yn == 'd'){
+        printf("%c", ctype);
+        printf("\n");
+    }
+}
+    { //File Creation Cancel Stuff
         if (yn == 'N'){
     printf("File Create Cancelled\n");
     yn = '\0';
@@ -63,7 +78,9 @@ int main()
     printf("File Create Cancelled\n");
     yn = '\0';
     }
+    }
 }
-}
-    return 0;
+
+        }
+            return 0x001;
 }
