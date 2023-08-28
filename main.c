@@ -10,7 +10,7 @@ int main()
     char create; //char store for the create command
         char yn; //char store for y/n inputs
         char ctype;
-    printf("/>");
+    printf("\\>");
     scanf(" %s", &ch);
 
     if (ch == 100){ //printf for dir command (d)
@@ -19,9 +19,11 @@ int main()
     if (ch == 68){ //printf for dir command (D)
     printf("ERROR: NO FILES\n");
     }
+
     if (ch == 63){ //printf for help command (?)
-        printf("? = HELP \nD = FILE VIEW\nC = Create File\n");
+        printf("? = HELP \nD = FILE VIEW\nC = CREATE FILE\nX = EXIT\n");
     }
+
     if (ch == 'c'){//printf for create command (c)
         printf("Please Select Type\n1: TXT file\n2: C source file\n3: C++ source file\n");
         printf("Type:");
@@ -32,6 +34,14 @@ int main()
         printf("Type:");
         scanf("%s", &create);
     }
+
+    if (ch == 'x'){//print statment for exit (x)
+                return 0x002;
+    }
+    if (ch == 'x'){//print statment for exit (X)
+                return 0x002;
+    }
+
 {//if statements for Y/N questions (file create menu)
     if (create == '1'){//file create statement 1 (TXT)
         printf("Are You Sure?\n");
@@ -79,8 +89,21 @@ int main()
     yn = '\0';
     }
     }
+    }
+if (ctype == '1'){ //.TXT make script
+    fopen("text.txt","a+");
+
+
+}
+if (ctype == '1'){ //.C make script
+    fopen("text.c","a+");
+
+}
+if (ctype == '1'){ //.CPP make script
+    fopen("text.cpp","a+");
+
 }
 
-        }
-            return 0x001;
+}
+return 0x001;
 }
