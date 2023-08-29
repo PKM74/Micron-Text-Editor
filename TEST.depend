@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1685582034 source:c:\users\hi556\documents\code\test\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1685582034 source:c:\users\admin\desktop\files\code\test\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1690682591 source:c:\documents and settings\admin\my documents\code\test\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+
+1693044749 source:d:\text console\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1693255808 source:d:\code\text console\main.c
+	<stdio.h>
+
