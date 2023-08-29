@@ -3,7 +3,7 @@
 #include <time.h>
 int main()
 {
-    printf("Micron Text Editor Version 0.0.3a\nMade By PKM74 on Github 2023\n\nPress ? for Help\n\n");
+    printf("Micron Text Editor Version 0.1.1a\nMade By PKM74 on Github 2023\n\nPress ? for Help\n\n");
 
     for(;;){
     srand(time(NULL));
@@ -13,6 +13,7 @@ int main()
         char ctype;
         char otype;
         char textmode;
+        char filename[50];
     printf("\\>");
     scanf(" %s", &ch);
 
@@ -24,18 +25,18 @@ int main()
     }
 
     if (ch == '?'){ //printf for help command (?)
-        printf("? = HELP \nD = FILE VIEW\nC = CREATE FILE\nX = EXIT\nO = OPEN\nV = VERSION\n`x = EXIT TEXT MODE\n");
+        printf("? = HELP \nD = FILE VIEW\nC = CREATE FILE\nX = EXIT\nO = OPEN\nV = VERSION\n` = EXIT TEXT MODE\n");
     }
 
     if (ch == 'c'){//printf for create command (c)
-        printf("Please Select Type\n1: TXT file\n2: C source file\n3: C++ source file\n");
-        printf("Type:");
-        scanf("%s", &create);
+    printf("Enter File Name:");
+    scanf("%s", &filename);
+    sprintf(filename, "%c.txt");
+    fopen( filename, "a+");
     }
     if (ch == 'C'){//printf for create command (C)
-        printf("Please Select Type\n1: TXT file\n2: C source file\n3: C++ source file\n");
-        printf("Type:");
-        scanf("%s", &create);
+    printf("Enter File Name:\n");
+    scanf("%s", &filename);
     }
 
     if (ch == 'x'){//print statment for exit (x)
@@ -46,7 +47,7 @@ int main()
     }
 
     if (ch == 'o'){//pint statment for open (o)
-    printf("Please Enter File Type\n\n1: .TXT (Text File)\n2: .C (C Source File)\n3: .CPP (C++ Source File)\nType:");
+    printf("Please Enter File Type\n\n1: .TXT (Text File)\n2: .C (C Source File)\n3: .CPP (C++ Source File)\n4: Custom File\nType:");
     scanf("%s", &otype);
     printf("\n");
      if (otype == '1'){//file open statement 1 (TXT)
@@ -64,152 +65,18 @@ int main()
     }
 
     if (ch == 'V'){//Version command (V)
-    printf("Micron Text Editor Version 0.0.3a\nMade By PKM74 on Github 2023\n\n");
+    printf("Micron Text Editor Version 0.1.1a\nMade By PKM74 on Github 2023\n\n");
     }
     if (ch == 'v'){//Version command (v)
-    printf("Micron Text Editor Version 0.0.3a\nMade By PKM74 on Github 2023\n\n");
+    printf("Micron Text Editor Version 0.1.1a\nMade By PKM74 on Github 2023\n\n");
     }
-
-{//if statements for Y/N questions (file create menu)
-    if (create == '1'){//file create statement 1 (TXT)
-        printf("Are You Sure?\n");
-        printf("Y or N:");
-        scanf("%s", &yn);
-        ctype = '1';
-          {//File Create Stuff
-    if (yn == 'y'){
-    printf("File Created\n");
-    yn = '\0';
-
-    }
-        if (yn == 'Y'){
-    printf("File Created\n");
-    yn = '\0';
-
-    }
-    if (yn == 'd'){
-        printf("%c", ctype);
-        printf("\n");
-    }
-}
-    { //File Creation Cancel Stuff
-        if (yn == 'N'){
-    printf("File Create Cancelled\n");
-    yn = '\0';
-    }
-            if (yn == 'n'){
-    printf("File Create Cancelled\n");
-    yn = '\0';
-    }
-    }
-    }
-        if (create == '2'){//file create statement 2 (C)
-        printf("Are You Sure?\n");
-        printf("Y or N:");
-        scanf("%s", &yn);
-                ctype = '2';
-                  {//File Create Stuff
-    if (yn == 'y'){
-    printf("File Created\n");
-    yn = '\0';
-
-    }
-        if (yn == 'Y'){
-    printf("File Created\n");
-    yn = '\0';
-
-    }
-    if (yn == 'd'){
-        printf("%c", ctype);
-        printf("\n");
-    }
-}
-    { //File Creation Cancel Stuff
-        if (yn == 'N'){
-    printf("File Create Cancelled\n");
-    yn = '\0';
-    }
-            if (yn == 'n'){
-    printf("File Create Cancelled\n");
-    yn = '\0';
-    }
-    }
-    }
-        if (create == '3'){//file create statement 3 (C++)
-
-        printf("Are You Sure?\n");
-        printf("Y or N:");
-        scanf("%s", &yn);
-                ctype = '3';
-                  {//File Create Stuff
-    if (yn == 'y'){
-    printf("File Created\n");
-    yn = '\0';
-
-    }
-        if (yn == 'Y'){
-    printf("File Created\n");
-    yn = '\0';
-
-    }
-    if (yn == 'd'){
-        printf("%c", ctype);
-        printf("\n");
-    }
-}
-    { //File Creation Cancel Stuff
-        if (yn == 'N'){
-    printf("File Create Cancelled\n");
-    yn = '\0';
-    }
-            if (yn == 'n'){
-    printf("File Create Cancelled\n");
-    yn = '\0';
-    }
-    }
-
-    }
-
-
-    }
-if (ctype == '1'){ //.TXT make script and auto open
-    fopen("text.txt","a+");
-    if (ctype == '1'){//file open statement 1 (TXT)
-        printf("Would you Like to open the file?\n");
-        printf("Y or N:");
-        scanf("%s", &yn);
-        ctype = '0';
-        if (yn == 'y'){
-            (yn = '0');
-                        textmode = '1';
-        }
-    }
-
-}
-if (ctype == '2'){ //.C make script and auto open
-    fopen("text.c","a+");
-
-}
-if (ctype == '3'){ //.CPP make script and auto open
-    fopen("text.cpp","a+");
-
-}
-
-
-
-
-
-
-
-
-
-
 
 
 if (textmode == '1'){//texmode Exit
     if (ch == '`'){// I
         printf("Exiting");
-        fclose("text.txt");
+        sprintf(filename, "%c");
+        fclose(filename);
     }
 }
 
