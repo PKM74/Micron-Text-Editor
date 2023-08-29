@@ -3,6 +3,7 @@
 #include <time.h>
 int main()
 {
+    printf("Micron Text Editor Version 0.0.3a\nMade By PKM74 on Github 2023\n\nPress ? for Help\n\n");
 
     for(;;){
     srand(time(NULL));
@@ -11,18 +12,19 @@ int main()
         char yn; //char store for y/n inputs
         char ctype;
         char otype;
+        char textmode;
     printf("\\>");
     scanf(" %s", &ch);
 
-    if (ch == 100){ //printf for dir command (d)
+    if (ch == 'd'){ //printf for dir command (d)
     printf("ERROR: NO FILES\n");
     }
-    if (ch == 68){ //printf for dir command (D)
+    if (ch == 'D'){ //printf for dir command (D)
     printf("ERROR: NO FILES\n");
     }
 
-    if (ch == 63){ //printf for help command (?)
-        printf("? = HELP \nD = FILE VIEW\nC = CREATE FILE\nX = EXIT\nO = OPEN\n");
+    if (ch == '?'){ //printf for help command (?)
+        printf("? = HELP \nD = FILE VIEW\nC = CREATE FILE\nX = EXIT\nO = OPEN\nV = VERSION\n`x = EXIT TEXT MODE\n");
     }
 
     if (ch == 'c'){//printf for create command (c)
@@ -55,10 +57,17 @@ int main()
         if (yn == 'y'){
             (yn = '0');
             fopen(".\\files\text.txt", "a+");
-            printf("File Opened Write the data in the Command Line press I to exit the editor your old data should also appear");
-            fscanf(".\\files\text.txt" "a" "f")
+            printf("File Opened Write the data in the Command Line press I to exit the editor\n");
+            textmode = '1';
         }
     }
+    }
+
+    if (ch == 'V'){//Version command (V)
+    printf("Micron Text Editor Version 0.0.3a\nMade By PKM74 on Github 2023\n\n");
+    }
+    if (ch == 'v'){//Version command (v)
+    printf("Micron Text Editor Version 0.0.3a\nMade By PKM74 on Github 2023\n\n");
     }
 
 {//if statements for Y/N questions (file create menu)
@@ -172,6 +181,7 @@ if (ctype == '1'){ //.TXT make script and auto open
         ctype = '0';
         if (yn == 'y'){
             (yn = '0');
+                        textmode = '1';
         }
     }
 
@@ -183,6 +193,24 @@ if (ctype == '2'){ //.C make script and auto open
 if (ctype == '3'){ //.CPP make script and auto open
     fopen("text.cpp","a+");
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+if (textmode == '1'){//texmode Exit
+    if (ch == '`'){// I
+        printf("Exiting");
+        fclose("text.txt");
+    }
 }
 
 }
